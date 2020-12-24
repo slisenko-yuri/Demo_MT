@@ -445,7 +445,8 @@ PT_THREAD(Task_BLINK(struct pt *Context))
 			fHighFreqBlinkHL = !fHighFreqBlinkHL;
 			
 			// Устанавливаем таймаут
-			MT_TimeoutSet(TIMEOUT_HL, MS_TO_SYSTICK(TimeBetweenModeHL));
+			//MT_TimeoutSet(TIMEOUT_HL, MS_TO_SYSTICK(TimeBetweenModeHL));
+			MT_TimeoutMs(TIMEOUT_HL, TimeBetweenModeHL);
 		}
 
 		// Инверсия состояния вывода порта, к которому подключен
